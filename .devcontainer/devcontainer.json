@@ -1,0 +1,26 @@
+{
+  "name": "Hoho3D Games",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.eol": "\n",
+        "typescript.tsdk": "node_modules/typescript/lib"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install && npm run dev",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js dev server",
+      "onAutoForward": "notify"
+    }
+  }
+}
