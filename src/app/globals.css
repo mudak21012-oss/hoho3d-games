@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accesibilidad: foco claramente visible y alto contraste por defecto */
+:root {
+  color-scheme: light dark;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-4 outline-orange-500;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-orange-500;
+}
+.btn-primary {
+  @apply bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800;
+}
+.btn-secondary {
+  @apply bg-neutral-800 text-white hover:bg-neutral-900 active:bg-black;
+}
+.card {
+  @apply rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-xl backdrop-blur;
+}
+.input {
+  @apply w-full rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-2 text-white placeholder-neutral-400;
+}
+.label {
+  @apply mb-1 block text-sm font-medium text-neutral-200;
+}
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full bg-neutral-800 px-3 py-1 text-xs font-medium text-neutral-200;
+}
+.progress {
+  @apply h-2 w-full overflow-hidden rounded-full bg-neutral-800;
+}
+.progress > div {
+  @apply h-full bg-orange-500 transition-[width];
+}
